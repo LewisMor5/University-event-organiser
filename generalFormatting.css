@@ -1,0 +1,67 @@
+/* ROOT VARIABLES - Ensure these are defined in your generalFormatting.css */
+:root {
+  --accent: #e85d26;
+  --accent-light: rgba(232, 93, 38, 0.2);
+  --border: #dcd7cf;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
+  --radius: 12px;
+}
+
+/* Required field asterisk */
+.required::after {
+  content: ' *';
+  color: red;
+}
+/* Page layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #ffffff;
+  border-right: 1px solid #e2ddd4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #6b6b63;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: block;
+}
+
+.sidebar a:hover {
+  background: #fdf0ea;
+  color: #e85d26;
+}
+
+/* Main content area */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-size: 1.3rem; font-weight: 800;
+  color: var(--ink); letter-spacing: -0.5px;
+}
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 8px; align-items: center; }
+.nav-links a {
+  text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  color: var(--muted); padding: 6px 14px; border-radius: 8px;
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+}
+.nav-links a:hover,
+.nav-links a.active { background: var(--accent-light); color: var(--accent); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 1.4rem; }

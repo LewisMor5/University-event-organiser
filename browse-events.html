@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="generalFormatting.css">
+  <link rel="stylesheet" href="browse-events.css">
+  <script src = "events.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Events App</title>
+
+</head>
+
+<body>
+
+  <nav style="
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  background: rgba(245, 242, 235, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e2ddd4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+">
+  <div style="
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #1a1a18;
+  ">
+    Campus<span style="color: #e85d26;">Events</span>
+  </div>
+  <div style="display: flex; gap: 8px;">
+    <a href="index.html" style="
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #6b6b63;
+      padding: 6px 14px;
+      border-radius: 8px;
+    ">Home</a>
+    <a href="browse-events.html" style="
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e85d26;
+      background: #fdf0ea;
+      padding: 6px 14px;
+      border-radius: 8px;
+    ">Browse Events</a>
+  </div>
+</nav>
+
+
+<!-- ======================= -->
+<!-- ALL EVENTS PAGE -->
+<!-- ======================= -->
+
+<div id="eventsPage">
+
+<h1>All Events</h1>
+<p class="events-count">Showing 8 events</p>
+
+  <!-- SEARCH BAR  -->
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="searchInput" placeholder="Search events, locations…" autocomplete="off" />
+</div>
+
+<!-- FILTER BUTTONS -->
+<div class="filter-strip" id="filterStrip">
+  <button class="filter-btn active" data-cat="All">All</button>
+  <button class="filter-btn" data-cat="Sports">Sports</button>
+  <button class="filter-btn" data-cat="Study">Study</button>
+  <button class="filter-btn" data-cat="Social">Social</button>
+  <button class="filter-btn" data-cat="Culture">Culture</button>
+</div>
+
+<div class="events-grid" id="eventsGrid"></div>
+
+</div>
+<!-- ======================= -->
+<!-- EVENT DETAILS PAGE -->
+<!-- ======================= -->
+
+<div id="eventDetails" class="event-box">
+
+<div id="icon" class="event-icon"></div>
+
+<h1 id="title" class="event-title"></h1>
+
+<p id="date" class="event-info"></p>
+<p id="time" class="event-info"></p>
+<p id="location" class="event-info"></p>
+<div class="buttons">
+
+<button class="going" onclick="rsvpEvent()">I'm Going!</button>
+
+<button class="favourite" onclick="saveEvent()">Save Favourite</button>
+
+<br>
+
+<button class="back" onclick="goBack()">Back to Events</button>
+
+</div>
+
+</div>
+</body>
+</html>
